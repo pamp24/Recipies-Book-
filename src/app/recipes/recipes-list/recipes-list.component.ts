@@ -14,7 +14,10 @@ export class RecipesListComponent implements OnInit {
     'https://th.bing.com/th/id/OIP.4LyJ-zFChn39BWHHPkEqYgHaLH?rs=1&pid=ImgDetMain'),
     new Recipe('QUINOA POWER BOWLS',
     'Quinoa Power Bowls with Maple Chipotle Brussels',
-    'https://twohealthykitchens.com/wp-content/uploads/2020/11/QuinaPowerBowls2.jpg')
+    'https://twohealthykitchens.com/wp-content/uploads/2020/11/QuinaPowerBowls2.jpg'),
+    new Recipe('ONE POT THAI PASTA',
+    'One Pot Thai Pasta is whole wheat spaghetti',
+    'https://twohealthykitchens.com/wp-content/uploads/2020/11/one-pot-thai-peanut-veggie-pasta1.jpg'),
   ];
   constructor(){
 
