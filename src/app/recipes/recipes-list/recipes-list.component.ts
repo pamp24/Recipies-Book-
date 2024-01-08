@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Recipe } from '../recipes.model';
 
 @Component({
@@ -7,16 +7,23 @@ import { Recipe } from '../recipes.model';
   styleUrl: './recipes-list.component.css'
 })
 export class RecipesListComponent implements OnInit {
+  @Output() recipeWasSelected = new EventEmitter<Recipe>();
   recipes: Recipe[] = [
-    new Recipe('A Test Recipe',
-    'this is a test',
-    'https://www.myrecipemagic.com/media-library/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpbWFnZSI6Imh0dHBzOi8vd3d3Lml0aXNha2VlcGVyLmNvbS93cC1jb250ZW50L3VwbG9hZHMvMjAxMC8wMy9HcmlsbGVkLVBvcmstdGVuZGVybG9pbi1tYXJpbmFkZS1IRVJPLmpwZyIsImV4cGlyZXNfYXQiOjE2NjQ4NDM3OTJ9.VWdrQ5VnwLQHCuPv38Cnn1GZmYfFEjgEzbvsr-f181M/image.jpg?width=2000&height=2000',)
+    new Recipe('ROASTED VEGGIE GLOW BOWLS',
+    'Roasted Veggie Glow Bowls feature a mix of cauliflower',
+    'https://th.bing.com/th/id/OIP.4LyJ-zFChn39BWHHPkEqYgHaLH?rs=1&pid=ImgDetMain'),
+    new Recipe('QUINOA POWER BOWLS',
+    'Quinoa Power Bowls with Maple Chipotle Brussels',
+    'https://twohealthykitchens.com/wp-content/uploads/2020/11/QuinaPowerBowls2.jpg')
   ];
   constructor(){
 
   }
   ngOnInit(): void {
       
+  }
+  onRecipeSelected(Recipe: Recipe){
+    this.recipeWasSelected.emit(Recipe);
   }
 
 }
