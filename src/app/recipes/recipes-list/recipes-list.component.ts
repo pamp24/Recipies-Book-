@@ -7,16 +7,13 @@ import { RecipeService } from '../services/recipes.services';
   templateUrl: './recipes-list.component.html',
   styleUrl: './recipes-list.component.css'
 })
-export class RecipesListComponent implements OnInit {
-  
+export class RecipeListComponent implements OnInit {
   recipes: Recipe[];
 
-  constructor(private RecipeService: RecipeService){
-
+  constructor(private recipeService: RecipeService) {
   }
-  ngOnInit(){
-      this.recipes = this.RecipeService.getRecipes();
-  }
-  
 
+  ngOnInit() {
+    this.recipes = this.recipeService.getRecipes();
+  }
 }
