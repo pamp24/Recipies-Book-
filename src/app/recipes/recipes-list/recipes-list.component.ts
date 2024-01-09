@@ -1,5 +1,6 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, OnInit,} from '@angular/core';
 import { Recipe } from '../recipes.model';
+import { RecipeService } from '../services/recipes.services';
 
 @Component({
   selector: 'app-recipes-list',
@@ -7,26 +8,15 @@ import { Recipe } from '../recipes.model';
   styleUrl: './recipes-list.component.css'
 })
 export class RecipesListComponent implements OnInit {
-  @Output() recipeWasSelected = new EventEmitter<Recipe>();
-  recipes: Recipe[] = [
-    new Recipe('ROASTED VEGGIE GLOW BOWLS',
-    'Roasted Veggie Glow Bowls feature a mix of cauliflower',
-    'https://th.bing.com/th/id/OIP.4LyJ-zFChn39BWHHPkEqYgHaLH?rs=1&pid=ImgDetMain'),
-    new Recipe('QUINOA POWER BOWLS',
-    'Quinoa Power Bowls with Maple Chipotle Brussels',
-    'https://twohealthykitchens.com/wp-content/uploads/2020/11/QuinaPowerBowls2.jpg'),
-    new Recipe('ONE POT THAI PASTA',
-    'One Pot Thai Pasta is whole wheat spaghetti',
-    'https://twohealthykitchens.com/wp-content/uploads/2020/11/one-pot-thai-peanut-veggie-pasta1.jpg'),
-  ];
-  constructor(){
+  
+  recipes: Recipe[];
+
+  constructor(private RecipeService: RecipeService){
 
   }
-  ngOnInit(): void {
-      
+  ngOnInit(){
+      this.recipes = this.RecipeService.getRecipes();
   }
-  onRecipeSelected(Recipe: Recipe){
-    this.recipeWasSelected.emit(Recipe);
-  }
+  
 
 }
