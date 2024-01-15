@@ -33,4 +33,4 @@ import { ShoppingListService } from './shopping-list/services/shopping-list.serv
   providers: [ShoppingListService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

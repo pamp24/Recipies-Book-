@@ -30,7 +30,7 @@ export class RecipeService{
         [new Ingredient ('Meat',10),
         new Ingredient ('Eggs',15),
         new Ingredient ('Lemon',20)]),
-      ];
+    ];
     
       constructor(private slService: ShoppingListService) {}
 
@@ -41,4 +41,5 @@ export class RecipeService{
       addIngredientsToShoppingList(ingredients: Ingredient[]) {
         this.slService.addIngredients(ingredients);
       }
-    }
+
+}
