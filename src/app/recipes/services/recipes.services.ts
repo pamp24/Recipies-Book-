@@ -20,22 +20,26 @@ export class RecipeService{
         'QUINOA POWER BOWLS',
         'Quinoa Power Bowls with Maple Chipotle Brussels',
         'https://twohealthykitchens.com/wp-content/uploads/2020/11/QuinaPowerBowls2.jpg',
-        [new Ingredient ('Meat',10),
-        new Ingredient ('Eggs',15),
-        new Ingredient ('Lemon',20)]),
+        [new Ingredient ('Orange',10),
+        new Ingredient ('Avocado',15),
+        new Ingredient ('Chicken',20)]),
         new Recipe(
         'ONE POT THAI PASTA',
         'One Pot Thai Pasta is whole wheat spaghetti',
         'https://twohealthykitchens.com/wp-content/uploads/2020/11/one-pot-thai-peanut-veggie-pasta1.jpg',
-        [new Ingredient ('Meat',10),
-        new Ingredient ('Eggs',15),
-        new Ingredient ('Lemon',20)]),
+        [new Ingredient ('Pasta',10),
+        new Ingredient ('Milk',15),
+        new Ingredient ('Sugar',20)]),
     ];
     
       constructor(private slService: ShoppingListService) {}
 
       getRecipes() {
         return this.recipes.slice();
+      }
+    
+      getRecipe(index: number) {
+        return this.recipes[index];
       }
     
       addIngredientsToShoppingList(ingredients: Ingredient[]) {
