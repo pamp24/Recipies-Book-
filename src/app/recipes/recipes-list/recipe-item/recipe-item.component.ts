@@ -12,14 +12,6 @@ export class RecipeItemComponent implements OnInit {
   @Input() recipe: Recipe;
   @Input() index: number;
 
-  constructor(private recipeService: RecipeService,
-              private router: Router,
-              private route: ActivatedRoute) { }
-
   ngOnInit() {}
-
-  onSelected() {
-    this.recipeService.recipeSelected.next(this.recipe);
-  }
 
 }
